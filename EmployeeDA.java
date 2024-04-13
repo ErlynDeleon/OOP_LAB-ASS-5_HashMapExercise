@@ -17,11 +17,10 @@ public class EmployeeDA {
         Employee emp = new Employee();
         try {
             Scanner employeeFile = new Scanner(new FileReader("C:\\Users\\Admin\\SnapSack\\OOP_LAB-ASS-5_HashMapExercise\\emp.csv"));
-            employeeFile.nextLine();
             while (employeeFile.hasNext()) {
                 String empLine = employeeFile.nextLine();
                 String[] empArr = empLine.split(",");
-                if (empArr[0].equals(empNo)) {
+                if (empArr[0].trim().equals(empNo)) {
                     emp.setEmpNo(empArr[0].trim());
                     emp.setLastName(empArr[1].trim());
                     emp.setFirstName(empArr[2].trim());
